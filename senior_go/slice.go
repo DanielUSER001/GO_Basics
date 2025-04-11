@@ -21,6 +21,19 @@ func main() {
 	fmt.Println("-----------------")
 
 }
+func removeLoop(slice []int, index int) []int {
+
+	result := make([]int, 0, len(slice)-1)
+
+	for key, value := range slice {
+		if index == key {
+			continue
+		}
+		result = append(result, value)
+	}
+	return result
+}
+
 
 func removeNewSlice(slice []int, index int) []int {
 	result := make([]int, len(slice)-1)
@@ -36,18 +49,6 @@ func removeCopy(slice []int, index int) []int {
 	return slice[:len(slice)-1]
 }
 
-func removeLoop(slice []int, index int) []int {
-
-	result := make([]int, 0, len(slice)-1)
-
-	for key, value := range slice {
-		if index == key {
-			continue
-		}
-		result = append(result, value)
-	}
-	return result
-}
 
 func removeAppend(slice []int, index int) []int {
 	return append(slice[:index], slice[index+1:]...)

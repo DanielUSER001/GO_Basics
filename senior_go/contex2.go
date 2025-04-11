@@ -19,7 +19,7 @@ func Operacion( ctx context.Context){
 
 }
 
-func main6() {
+func Main6() {
 
 	ctxHijo, CancelFunc := context.WithCancel(context.Background())
 
